@@ -12,5 +12,5 @@ read age
 echo "Hey, you are $age $Person1 !"
 echo "What is the age of $Person2 ?"
 read age2
-gap=($age - $age2)
+gap=$(($age-$age2))
 echo "Age gap between $Person1 and $Person2 is $gap"

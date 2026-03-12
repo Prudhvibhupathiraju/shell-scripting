@@ -9,4 +9,8 @@ Person2=$2
 echo "$Person1 and $Person2 are best friends"
 echo "What is your age $Person1"
 read age
-echo "Hey, you are $age $Person1"
+echo "Hey, you are $age $Person1 !"
+echo "What is the age of $Person2 ?"
+read age2
+gap = ($age - $age2)
+echo "Age gap between $Person1 and $Person2 is $gap"

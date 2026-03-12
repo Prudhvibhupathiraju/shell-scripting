@@ -14,3 +14,6 @@ echo "What is the age of $Person2 ?"
 read age2
 gap=$(($age-$age2))
 echo "Age gap between $Person1 and $Person2 is $gap"
+echo "total arguments passed :: $#"
+echo "All the arguments passed :: $@"
+echo "script-name :: $0"

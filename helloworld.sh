@@ -4,3 +4,6 @@ person1=Prudhvi
 person2=Babitha
 person3=Ayaansh
 echo "$person1, $person2 and $person3 are one family"
+$1=Person1
+$2=Person2
+echo "$Person1 and $Person2 are best friends"

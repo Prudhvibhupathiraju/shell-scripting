@@ -19,3 +19,7 @@ echo "All the arguments passed :: $@"
 echo "script-name :: $0"
 user=$(whoami)
 echo "User logged in is $user"
+friuts=("Apple" "Kiwi" "Mango")
+echo "Fruit 1 is $friuts[0]"
+echo "Fruit 2 is $friuts[1]"
+echo "Fruit 3 is $friuts[2]"

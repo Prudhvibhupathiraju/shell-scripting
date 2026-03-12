@@ -7,3 +7,6 @@ echo "$person1, $person2 and $person3 are one family"
 Person1=$1
 Person2=$2
 echo "$Person1 and $Person2 are best friends"
+echo "What is your age $Person1"
+read age
+echo "Hey, you are $age $Person1"

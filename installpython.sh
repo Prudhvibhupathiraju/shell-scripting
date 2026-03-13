@@ -9,7 +9,7 @@ N="\e[0m"
 echo -e "Script is executing at $Y $TIMESTAMP $N "
 echo "$R Checking ditrubution is Ubuntu or Red Hat $N"
 validate_distrubution(){
-cat /etc/os-release | grep $1
+cat /etc/os-release | grep $1 &>> $LOGFILE
 if [ $? -eq 0 ]
 then
 echo "$G Distrubution is $1 $N"
@@ -36,8 +36,9 @@ apt install python3 python3-pip -y &>> $LOGFILE
     echo "$G Successfully installed python3 python3-pip $N"
     else
     echo "$R Installation failed $N"
+    fi
 exit 1
-elif [ "$OS" = "Redhat" ]
+elif [ "$OS" = "rhel" ]
 then
 yum install python3 python3-pip -y
 exit 1

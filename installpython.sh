@@ -32,9 +32,8 @@ if [ "$OS" = "Ubuntu" ]
 then
 installer=apt
 elif [ "$OS" = "rhel" ]
+then
 installer=yum
-else
-echo "Invalid"
 fi
 $installer install python3 python3-pip -y &>> $LOGFILE
 if [ $? -eq 0 ]

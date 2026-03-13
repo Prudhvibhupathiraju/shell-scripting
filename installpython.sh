@@ -1,21 +1,17 @@
 #!/bin/bash
 echo "Checking ditrubution is Ubuntu or Red Hat"
-cat /etc/os-release | grep Ubuntu
+validate_distrubution(){
+cat /etc/os-release | grep $1
 if [ $? -eq 0 ]
 then
-echo "Distrubution is Ubuntu"
-OS="ubuntu"
+echo "Distrubution is $1"
+OS="$1"
 else
-echo "Distrubution is not Ubuntu"
+echo "Distrubution is not $1"
 fi
-cat /etc/os-release | grep rhel
-if [ $? -eq 0 ]
-then
-echo "Distrubution is Redhat"
-OS="Redhat"
-else
-echo "Distrubution is not Redhat"
-fi
+}
+validate_distrubution "Ubuntu"
+validate_distrubution "rhel"
 ID=$(id -u)
 if [ $ID -ne 0 ]
 then

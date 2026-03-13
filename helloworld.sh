@@ -23,3 +23,9 @@ friuts=("Apple" "Kiwi" "Mango")
 echo "Fruit 1 is ${friuts[0]}"
 echo "Fruit 2 is ${friuts[1]}"
 echo "Fruit 3 is ${friuts[2]}"
+if [age2 -ge 2]
+then
+echo "$Person2 ate ${fruits[0]}"
+else
+echo "$Person2 ate ${fruits[1]}"
+fi

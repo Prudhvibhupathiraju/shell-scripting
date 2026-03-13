@@ -20,7 +20,7 @@ exit 1
 else
 echo "Executing with root access"
 fi
-if [ "$OS" = "ubuntu" ]
+if [ "$OS" = "Ubuntu" ]
 then
 apt install python3 python3-pip -y
 exit 1

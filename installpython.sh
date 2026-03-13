@@ -1,6 +1,6 @@
 #!/bin/bash
 ID=$(id -u)
-timestamp=$(TZ=Asia/Kolkata date "+%Y-%m-%d %H:%M:%S")
+timestamp=$(TZ=Asia/Kolkata date "+%Y-%m-%d_%H:%M:%S")
 LOGFILE="/tmp/$0-$timestamp.log"
 R="\e[31m"
 G="\e[32m"

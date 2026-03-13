@@ -8,7 +8,7 @@ OS="ubuntu"
 else
 echo "Distrubution is not Ubuntu"
 fi
-cat /etc/os-release | grep Redhat
+cat /etc/os-release | grep rhel
 if [ $? -eq 0 ]
 then
 echo "Distrubution is Redhat"

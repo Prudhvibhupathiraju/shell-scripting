@@ -28,20 +28,19 @@ exit 1
 else
 echo -e "$G Executing with root access $N"
 fi
-if [ "$OS" = "Ubuntu" ]
+install_python(){
+    if [ "$OS" = "Ubuntu" ]
 then
-apt install python3 python3-pip -y &>> $LOGFILE
+installer=apt
+elif [ "$OS" = "rhel" ]
+installer=yum
+fi
+$installer install python3 python3-pip -y &>> $LOGFILE
     if [ $? -eq 0 ]
     then
     echo -e "$G Successfully installed python3 python3-pip $N"
     else
     echo -e "$R Installation failed $N"
     fi
-exit 1
-elif [ "$OS" = "rhel" ]
-then
-yum install python3 python3-pip -y
-exit 1
-else
-echo -e "invalid distrubution"
-fi
+}
+install_python

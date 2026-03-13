@@ -28,8 +28,7 @@ exit 1
 else
 echo -e "$G Executing with root access $N"
 fi
-install_python(){
-    if [ "$OS" = "Ubuntu" ]
+if [ "$OS" = "Ubuntu" ]
 then
 installer=apt
 elif [ "$OS" = "rhel" ]
@@ -42,5 +41,4 @@ echo -e "$G Successfully installed python3 python3-pip $N"
 else
 echo -e "$R Installation failed $N"
 fi
-}
-install_python
+

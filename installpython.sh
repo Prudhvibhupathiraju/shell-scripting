@@ -20,15 +20,18 @@ ID=$(id -u)
 if [ $ID -ne 0 ]
 then
 echo "Run this with root access"
+exit 1
 else
 echo "Executing with root access"
 fi
 if [ "$OS" = "ubuntu" ]
 then
 apt install python3 python3-pip -y
+exit 1
 elif [ "$OS" = "Redhat" ]
 then
 yum install python3 python3-pip -y
+exit 1
 else
 echo "invalid distrubution"
 fi

@@ -1,28 +1,41 @@
 #!/bin/bash
-echo "Checking ditrubution is Ubuntu or Red Hat"
+ID=$(id -u)
+timestamp=$(TZ=Asia/Kolkata date "+%Y-%m-%d %H:%M:%S")
+LOGFILE="/tmp/$0-$TIMESTAMP.log"
+R="\e[31m"
+G="\e[32m"
+Y="\e[33m"
+N="\e[0m"
+echo -e "Script is executing at $Y $TIMESTAMP $N "
+echo "$R Checking ditrubution is Ubuntu or Red Hat $N"
 validate_distrubution(){
 cat /etc/os-release | grep $1
 if [ $? -eq 0 ]
 then
-echo "Distrubution is $1"
+echo "$G Distrubution is $1 $N"
 OS="$1"
 else
-echo "Distrubution is not $1"
+echo "$R Distrubution is not $1 $N" &>> $LOGFILE
 fi
 }
 validate_distrubution "Ubuntu"
 validate_distrubution "rhel"
-ID=$(id -u)
+
 if [ $ID -ne 0 ]
 then
-echo "Run this with root access"
+echo "$R Run this with root access $N"
 exit 1
 else
-echo "Executing with root access"
+echo "$G Executing with root access $N"
 fi
 if [ "$OS" = "Ubuntu" ]
 then
-apt install python3 python3-pip -y
+apt install python3 python3-pip -y &>> $LOGFILE
+    if [ $? -eq 0 ]
+    then
+    echo "$G Successfully installed python3 python3-pip $N"
+    else
+    echo "$R Installation failed $N"
 exit 1
 elif [ "$OS" = "Redhat" ]
 then

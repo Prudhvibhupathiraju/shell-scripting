@@ -4,7 +4,7 @@ cat /etc/os-release | grep Ubuntu
 if [ $? -eq 0 ]
 then
 echo "Distrubution is Ubuntu"
-OS=ubuntu
+OS="ubuntu"
 else
 echo "Distrubution is not Ubuntu"
 fi
@@ -12,7 +12,7 @@ cat /etc/os-release | grep Redhat
 if [ $? -eq 0 ]
 then
 echo "Distrubution is Redhat"
-OS=Redhat
+OS="Redhat"
 else
 echo "Distrubution is not Redhat"
 fi
@@ -25,9 +25,10 @@ echo "Executing with root access"
 fi
 if [ "$OS" = "ubuntu" ]
 then
-apt install python3 python3-pip
+apt install python3 python3-pip -y
 elif [ "$OS" = "Redhat" ]
-yum install python3 python3-pip
+then
+yum install python3 python3-pip -y
 else
 echo "invalid distrubution"
 fi

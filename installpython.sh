@@ -1,12 +1,12 @@
 #!/bin/bash
 ID=$(id -u)
 timestamp=$(TZ=Asia/Kolkata date "+%Y-%m-%d %H:%M:%S")
-LOGFILE="/tmp/$0-$TIMESTAMP.log"
+LOGFILE="/tmp/$0-$timestamp.log"
 R="\e[31m"
 G="\e[32m"
 Y="\e[33m"
 N="\e[0m"
-echo -e "Script is executing at $Y $TIMESTAMP $N "
+echo -e "Script is executing at $Y $timestamp $N "
 echo -e "$R Checking ditrubution is Ubuntu or Red Hat $N"
 validate_distrubution(){
 cat /etc/os-release | grep $1 &>> $LOGFILE

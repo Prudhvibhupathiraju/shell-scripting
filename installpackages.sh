@@ -34,11 +34,13 @@ elif [ "$OS" = "rhel" ]
 then
 installer=yum
 fi
-$installer install python3 python3-pip -y &>> $LOGFILE
+for package in $@
+do
+$installer install $package -y &>> $LOGFILE
 if [ $? -eq 0 ]
 then
-echo -e "$G Successfully installed python3 python3-pip $N"
+echo -e "$G Successfully installed $package $N"
 else
 echo -e "$R Installation failed $N"
 fi
-
+done

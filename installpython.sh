@@ -33,7 +33,7 @@ installer=apt
 elif [ "$OS" = "rhel" ]
 then
 installer=yum
-fi
+fi                             
 $installer install python3 python3-pip -y &>> $LOGFILE
 if [ $? -eq 0 ]
 then

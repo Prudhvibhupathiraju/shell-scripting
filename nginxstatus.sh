@@ -30,7 +30,7 @@ Linux Monitoring System
 =============================
 EOF
 )
-echo "$message" | mail -s "🚨 ALERT: $SERVICE DOWN on $HOST" $email
+echo "$MESSAGE" | mail -s "🚨 ALERT: $SERVICE DOWN on $host" $email
 else
 echo "$service is up on $(hostname)" | mail -s "$service is running" $email
 fi

@@ -13,8 +13,8 @@ MESSAGE=$(cat <<EOF
 🚨 SERVICE ALERT 🚨
 =============================
 
-Server      : $HOST
-Service     : $SERVICE
+Server      : $host
+Service     : $service
 Status      : DOWN ❌
 Time        : $DATE
 

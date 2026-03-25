@@ -1,7 +1,7 @@
 #!/bin/bash
 ID=$(id -u)
 timestamp=$(TZ=Asia/Kolkata date "+%Y-%m-%d_%H:%M:%S")
-LOGFILE="/tmp/$0-$timestamp.log"
+LOGFILE="/tmp/shell-script-logs/$0-$timestamp.log"
 R="\e[31m"
 G="\e[32m"
 Y="\e[33m"
